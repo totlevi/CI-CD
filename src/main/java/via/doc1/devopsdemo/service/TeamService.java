@@ -33,7 +33,7 @@ public class TeamService {
         team_members.add(dora);
     }
 
-    public TeamMember getTeamMember2(StringmemberId) {
+    public TeamMember getTeamMember2(String memberId) {
         returnteamRepository.findById(memberId).get();
         }
 
