@@ -33,5 +33,4 @@ spec:
     - protocol: TCP
       port: 8081
       targetPort: 8081
-#      nodePort: 30852
-
+      # nodePort: 30852 (optional, can be uncommented if a specific port is required externally)
