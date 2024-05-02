@@ -36,11 +36,12 @@ jobs:
 
       - name: Test service URLs
         run: |
-          SERVICE_PORT=${{ steps.get_service_port.outputs.port }}
+          SERVICE_PORT=30852
           SERVICE_URL=$(minikube ip):$SERVICE_PORT
           echo "Service URL is: $SERVICE_URL"
           sleep 5
           curl -i http://$SERVICE_URL/
+      
 
       - name: Cleanup
         run: |
