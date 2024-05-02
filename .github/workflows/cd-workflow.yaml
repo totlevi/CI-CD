@@ -24,14 +24,14 @@ jobs:
         run: |
           export SHELL=/bin/bash
           eval $(minikube -p minikube docker-env)
-          docker build -f ./Dockerfile -t local/cicd-example .
+          docker build -f ./Dockerfile -t k8s-doc-example:v2.15.3 .
           echo -n "Verifying images: "
           docker images
 
       - name: Deploy to Minikube
         run: |
           kubectl apply -f deploy.yaml
-          kubectl wait --for=condition=Ready pod -l app=cicd-example
+          kubectl wait --for=condition=Ready pod -l app=k8s-doc-example
           kubectl get all
 
       - name: Test service URLs
