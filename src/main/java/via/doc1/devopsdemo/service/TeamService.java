@@ -1,8 +1,9 @@
 package via.doc1.devopsdemo.service;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import via.doc1.devopsdemo.model.Task;
 import via.doc1.devopsdemo.model.TeamMember;
+import via.doc1.devopsdemo.repository.TeamMemberRepository; 
 
 import java.util.ArrayList;
 import java.util.List;
