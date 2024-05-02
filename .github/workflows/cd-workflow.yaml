@@ -35,13 +35,14 @@ jobs:
           kubectl get all
 
       - name: Test service URLs
-      - run: |
+        run: |
           SERVICE_URL=$(minikube service k8s-doc-example --url)
           echo "SERVICE_URL=$SERVICE_URL"
           kubectl port-forward service/k8s-doc-example 8080:8080 &> /dev/null &
-      - run: |
+          sleep 5
           curl -i http://localhost:8080/
-
+      
+      
 
       - name: Cleanup
         run: |
