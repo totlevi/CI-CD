@@ -1,18 +1,27 @@
 package via.doc1.devopsdemo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
-@Entity(name= "TeamMember")
-@Table(name= "team_member")
+
+@Entity
+@Table(name = "team_member")
 public class TeamMember {
     @Id
     private String id;
     private String name;
     private String email;
-    @OneToMany(
-        fetch=FetchType.LAZY,
-        mappedBy= "teamMember")
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "teamMember")
     @JsonIgnore
     private List<Task> tasks;
+
+    public TeamMember() {}
 
     public TeamMember(String id, String name, String email, List<Task> tasks) {
         this.id = id;
@@ -56,10 +65,6 @@ public class TeamMember {
     @Override
     public String toString() {
         return String.format(
-                "TeamMember [" +
-                "id=%s, " +
-                "name=%s, " +
-                "email=%s" +
-                "tasks=%s]", id, name, email, tasks);
+                "TeamMember{id='%s', name='%s', email='%s', tasks=%s}", id, name, email, tasks);
     }
 }

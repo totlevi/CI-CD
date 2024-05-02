@@ -1,17 +1,23 @@
 package via.doc1.devopsdemo.model;
 
-import java.util.Objects;
-@Entity(name="Task")
-@Table(name="task")
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
+
+@Entity
+@Table(name = "task")
 public class Task {
     @Id
     private String id;
     private String name;
     private String description;
-    @ManyToOne(fetch=FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private TeamMember teamMember;
-    public Task() {
-    }
+
+    public Task() {}
 
     public Task(String id, String name, String description) {
         this.id = id;
@@ -19,7 +25,7 @@ public class Task {
         this.description = description;
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
@@ -44,24 +50,24 @@ public class Task {
     }
 
     @Override
-    public String toString() {
-        return "Task{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Task)) return false;
         Task task = (Task) o;
         return id.equals(task.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return id.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
