@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.FetchType;
 
 @Entity
-@Table(name = "task")
+@Table(name ="task")
 public class Task {
     @Id
     private String id;
