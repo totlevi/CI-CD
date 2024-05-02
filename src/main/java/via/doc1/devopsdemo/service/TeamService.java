@@ -34,7 +34,7 @@ public class TeamService {
     }
 
     public TeamMember getTeamMember2(String memberId) {
-        returnteamRepository.findById(memberId).get();
+        return teamRepository.findById(memberId).get();
         }
 
     public TeamMember getTeamMember (String memberId) {

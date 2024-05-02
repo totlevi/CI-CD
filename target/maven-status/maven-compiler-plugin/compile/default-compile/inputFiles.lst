@@ -1,5 +1,7 @@
-/workspaces/devops-demo/src/main/java/via/doc1/devopsdemo/model/TeamMember.java
-/workspaces/devops-demo/src/main/java/via/doc1/devopsdemo/controller/TeamController.java
-/workspaces/devops-demo/src/main/java/via/doc1/devopsdemo/model/Task.java
-/workspaces/devops-demo/src/main/java/via/doc1/devopsdemo/DevopsDemoApplication.java
-/workspaces/devops-demo/src/main/java/via/doc1/devopsdemo/service/TeamService.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/service/TeamService.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/model/TeamMember.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/model/Task.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/repository/TaskRepository.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/controller/TeamController.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/repository/TeamMemberRepository.java
+/Users/AgostonBabicz/Documents/GitHub/DOC1_Assignment/src/main/java/via/doc1/devopsdemo/DevopsDemoApplication.java
