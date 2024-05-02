@@ -34,6 +34,16 @@ jobs:
           kubectl wait --for=condition=Ready pod -l app=k8s-doc-example
           kubectl get all
 
+      - name: Inspect Services and Pods
+        run: |
+          echo "Services:"
+          kubectl get svc
+          echo "Pods:"
+          kubectl get pods
+          echo "Logs of the first pod:"
+          kubectl logs $(kubectl get pod -l app=k8s-doc-example -o jsonpath="{.items[0].metadata.name}")
+
+
       - name: Test service URLs
         run: |
           SERVICE_URL=$(minikube service k8s-doc-example --url)
