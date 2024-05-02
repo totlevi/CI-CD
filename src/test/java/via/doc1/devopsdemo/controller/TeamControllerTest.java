@@ -31,7 +31,7 @@ public class TeamControllerTest {
     @MockBean
     private TeamService teamService;
 
-    Task mockTask = new Task("Task1", "IoT Pipeline", "Create CD pipeline for IoT component");
+    Task mockTask = new Task("Task1", "IoT Pipeline", "Create CD pipeline for IoT component"); 
     String jsonTask = "{\"name\":\"IoT Pipeline\",\"description\":\"Create CD pipeline for IoT service\"}";
 
     @Test
