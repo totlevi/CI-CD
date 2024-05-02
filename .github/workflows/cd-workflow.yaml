@@ -46,10 +46,11 @@ jobs:
 
       - name: Test service URLs
         run: |
-          SERVICE_URL=$(minikube service k8s-doc-example --url)
-          echo "SERVICE_URL is: $SERVICE_URL"
-          sleep 5
-          curl -i $SERVICE_URL
+          echo "SERVICE_URL=$(minikube service k8s-doc-example --url)"
+          kubectl port-forward service/k8s-doc-example 8081:8081 &> /dev/null & sleep 5
+          kubectl port-forward service/k8s-doc-example 8081:8081 &> /dev/null &
+      - run: |
+          curl -i http://localhost:8081/
 
       - name: Cleanup
         run: |
