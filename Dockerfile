@@ -6,6 +6,6 @@ COPY src /app/src
 RUN mvn -B package --file pom.xml -DskipTests
 
 FROM eclipse-temurin:21-jdk-alpine
-EXPOSE 8089
+EXPOSE 8081
 COPY --from=build /app/target/*jar devops-demo-1.0.jar
 ENTRYPOINT ["java","-jar","devops-demo-1.0.jar"]
