@@ -5,4 +5,3 @@ import via.doc1.devopsdemo.model.Task;
 import via.doc1.devopsdemo.model.TeamMember;
 
 public interface TeamMemberRepository extends JpaRepository<TeamMember, String> { }
-interface TaskRepository extends JpaRepository<Task, String>{}
