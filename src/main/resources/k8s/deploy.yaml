@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-example
+  labels:
+    app: cicd-example
+spec:
+  selector:
+    matchLabels:
+      app: cicd-example
+  replicas: 1 # Number of replicas that will be created for this deployment
+  template:
+    metadata:
+      name: cicd-example
+      labels:
+        app: cicd-example
+    spec:
+      containers:
+        - name: cicd-example
+          image: local/cicd-example:latest # Image to be used inside the cluster
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata: # Metadata of the resource kind we are creating
+  name: cicd-example
+  labels:
+    app: cicd-example
+spec:
+  type: NodePort # type of the service.
+  selector:
+    app: cicd-example
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
